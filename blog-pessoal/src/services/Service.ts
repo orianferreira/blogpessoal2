@@ -1,9 +1,12 @@
 import axios from "axios";
-import { url } from "inspector";
 
 export const api = axios.create({
-    baseURL: 'https://omeublogpessoal.herokuapp.com'
+    baseURL: 'https://blogp-generation.herokuapp.com'
 })
+
+//https://omeublogpessoal.herokuapp.com - meu
+
+//https://blogp-generation.herokuapp.com - yuri
 
 export const cadastroUsuario = async (url: any, dados: any, setDado: any) => {
     const resposta = await api.post(url, dados)
@@ -17,5 +20,5 @@ export const login = async (url: any, dados: any, setDado: any) => {
 
 export const busca = async (url: any, setDado: any, header: any) => {
     const resposta = await api.get(url, header)
-    setDado(resposta.data.token)
+    setDado(resposta.data)
 }

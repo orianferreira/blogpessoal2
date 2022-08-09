@@ -10,14 +10,22 @@ function Login() {
 
     let history = useNavigate();
 
-    const [token, setToken] = useLocalStorage('token');
+    const [token, setToken] = useLocalStorage('token')
 
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
-        usuario: '',
-        senha: '',
-        token: ''
+        nome: "",
+        usuario: "",
+        senha: "",
+        foto: "",
+        token: ""
     })
+
+    useEffect(() => {
+        if (token !== "") {
+            history('/home')
+        }
+    }, [token])
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
         setUserLogin({
@@ -26,22 +34,15 @@ function Login() {
         })
     }
 
-    useEffect(() => {
-        if (token != '') {
-            history('/home')
-        }
-    }, [token])
-
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault();
+        e.preventDefault()
 
         try {
             await login(`/usuarios/logar`, userLogin, setToken)
-            alert('Usuário logado com sucesso!')
+            alert("Usuário logado com sucesso")
 
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!')
-
+            alert("Dados do usuário inconsistentes")
         }
     }
 
@@ -51,8 +52,8 @@ function Login() {
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
-                        <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' name='usuario' margin='normal' fullWidth />
-                        <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' name='senha' margin='normal' type='password' fullWidth />
+                        <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
+                        <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
                             <Button type='submit' variant='contained' color='primary'>
                                 Logar
@@ -63,17 +64,16 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                        <Link to='/cadastrousuario'>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1 text-decorator-none'>Cadastre-se</Typography>
+                        <Link to='/cadastro'>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
                     </Box>
                 </Box>
             </Grid>
             <Grid xs={6} className='imagem'>
-
             </Grid>
         </Grid>
-    );
+    )
 }
 
 export default Login;

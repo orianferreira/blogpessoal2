@@ -15,21 +15,27 @@ function Navbar() {
                     </Box>
 
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Home
-                            </Typography>
-                        </Box>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Postagens
-                            </Typography>
-                        </Box>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Temas
-                            </Typography>
-                        </Box>
+                        <Link to='./home' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Home
+                                </Typography>
+                            </Box>
+                        </Link>
+                        <Link to='./posts' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Postagens
+                                </Typography>
+                            </Box>
+                        </Link>
+                        <Link to='./temas' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Temas
+                                </Typography>
+                            </Box>
+                        </Link>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Cadastrar Tema

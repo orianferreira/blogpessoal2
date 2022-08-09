@@ -2,7 +2,7 @@ import React from "react";
 import InstagramIcon from "@material-ui/icons/Instagram"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import { Grid, Box, Typography, Button } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import './Footer.css';
 
 function Footer() {
