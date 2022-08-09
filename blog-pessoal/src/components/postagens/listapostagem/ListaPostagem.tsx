@@ -9,9 +9,11 @@ import './ListaPostagem.css';
 
 function ListaPostagem() {
 
-    const [posts, setPosts] = useState<Postagem[]>([])
-    const [token, setToken] = useLocalStorage('token');
     let history = useNavigate();
+
+    const [posts, setPosts] = useState<Postagem[]>([])
+    
+    const [token, setToken] = useLocalStorage('token');
 
     useEffect(() => {
         if (token === '') {
