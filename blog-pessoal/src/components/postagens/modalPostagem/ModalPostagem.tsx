@@ -5,7 +5,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import CadastroPost from '../cadastroPost/CadastroPost';
 import './ModalPostagem.css';
 
-
 function getModalStyle() {
   const top = 50 ;
   const left = 50;
@@ -31,11 +30,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function ModalPostagem () {
-
   const classes = useStyles();
-
   const [modalStyle] = React.useState(getModalStyle);
-
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -75,5 +71,4 @@ function ModalPostagem () {
     </div>
   );
 }
-
-export default ModalPostagem;
+export default ModalPostagem
