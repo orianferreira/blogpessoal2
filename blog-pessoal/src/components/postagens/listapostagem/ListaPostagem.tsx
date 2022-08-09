@@ -79,7 +79,7 @@ function ListaPostagem() {
                 </Box>
             ))}
         </>
-    )
+    );
 }
 
 export default ListaPostagem;

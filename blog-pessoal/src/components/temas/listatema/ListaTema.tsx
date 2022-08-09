@@ -75,7 +75,7 @@ function ListaTema() {
               </Box>
             ))}
         </>
-      )
+      );
     }
     
-    export default ListaTema
+    export default ListaTema;

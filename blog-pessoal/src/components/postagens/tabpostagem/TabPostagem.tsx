@@ -9,14 +9,13 @@ function TabPostagem() {
     const [value, setValue] = useState('1')
 
     function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
-    
+
         setValue(newValue);
     }
 
     return (
         <>
             <TabContext value={value}>
-
                 <AppBar position="static">
                     <Tabs centered indicatorColor="secondary" onChange={handleChange}>
                         <Tab label="Todas as postagens" value="1" />
