@@ -4,9 +4,10 @@ import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import './ListaPostagem.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
+import './ListaPostagem.css';
 
 function ListaPostagem() {
 
@@ -20,7 +21,16 @@ function ListaPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history("/login")
         }
     }, [token])

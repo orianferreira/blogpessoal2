@@ -33,8 +33,8 @@ export const post = async (url: any, dados: any, setDado: any, header: any) => {
     setDado(resposta.data)
 }
 
-export const put = async (url: any, dados: any, setDado: any, header: any) => {
-    const resposta = await api.put(url, dados, header)
+export const put = async(url: any, dados: any, setDado: any, header: any) => { 
+    const resposta = await api.put(url,dados,header)
     setDado(resposta.data)
 }
 
