@@ -1,8 +1,79 @@
-.cursor {
-    cursor: "pointer";
-    color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.text-decorator-none {
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+}
+
+.grid {
+    width: 100vw;
+}
+
+.nav-main {
+    width: 100% !important;
+    background-color: var(--cor-de-fundo) !important;
+    box-shadow: 0px 1.2px #47474757;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 60px !important;
+
+}
+
+.nav-link {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-link .link .typography {
+    border-bottom: 2px solid var(--cor-de-fundo);
+    transition: all 0.3s;
+    font-size: 20px;
+}
+
+.nav-link .link {
+    color: var(--white);
+    padding: 0px 11px;
     text-decoration: none;
+}
+
+.nav-link .link .typography:hover {
+    border-bottom: 2px solid var(--white);
+}
+
+
+.nome-marca {
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+
+}
+
+.MuiGrid-grid-xs-5,
+.MuiGrid-grid-xs-4 {
+    max-width: fit-content !important;
+    flex-basis: auto !important;
+}
+
+.MuiPaper-root {
+    color: var(--white);
+}
+
+.img-nav {
+    border-radius: 50%;
+    margin-right: 25px;
 }
